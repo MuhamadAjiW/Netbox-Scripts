@@ -1,0 +1,4 @@
+class Config:
+    nb_url = ""
+    nb_token = ""
+    chunk_size = 10
