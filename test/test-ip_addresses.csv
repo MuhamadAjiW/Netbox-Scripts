@@ -1,0 +1,2 @@
+address,status,device,interface,is_primary
+10.20.20.49/32,active,HDC-C1-SW-VMS-049-201,vlan,true

@@ -1,4 +1,13 @@
+import os
+
+
 class Config:
-    nb_url = ""
-    nb_token = ""
-    chunk_size = 10
+    PWD=os.path.dirname(os.path.realpath(__file__))
+    
+    class NetBox:
+        URL=""
+        TOKEN=""
+    
+
+if __name__ == "__main__":
+    print(os.path.realpath(__file__))

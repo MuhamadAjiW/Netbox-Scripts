@@ -1,15 +1,20 @@
 import pynetbox
 import urllib3
 import pandas as pd
-from config import Config
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-nb = pynetbox.api(Config.nb_url, Config.nb_token, threading=True)
-nb.http_session.verify = False
-csv = "./data.csv"
+pynetbox.api
 
-csv_chunks = pd.read_csv(csv, chunksize=Config.chunk_size)
+nb_url = ""
+nb_token = ""
+csv = "./data.csv"
+chunk_size = 10
+
+nb = pynetbox.api(nb_url, nb_token, threading=True)
+nb.http_session.verify = False
+
+csv_chunks = pd.read_csv(csv, chunksize=chunk_size)
 
 counter = 0
 success = 0
@@ -96,12 +101,11 @@ def main():
     global counter
     global success
 
-    for chunk in pd.read_csv(Config.csv, chunksize=Config.chunk_size):
+    for chunk in pd.read_csv(csv, chunksize=chunk_size):
         chunk["name"] = chunk["name"].replace({None: "-"})
         chunk["serial"] = chunk["serial"].replace({None: "-"})
         process_chunk(chunk)
     print(f"Added {success}/{counter} node")
-
 
 if __name__ == "__main__":
     main()

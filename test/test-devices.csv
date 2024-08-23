@@ -1,1 +1,27 @@
 role,manufacturer,device_type,status,site,name,tenant,platform,serial,asset_tag,location,rack,position,face,latitude,longitude,parent,device_bay,virtual_chassis,vc_position,vc_priority,cluster,description,config_template,comments,tags,id
+Firewall,Fortinet,FortiGate 60E,offline,HDC Cikarang,HDC-O1-FW-NET-91-199,,,Fortigate FG60E,,Cikarang,,,,,,,,,,,,,,,internet,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
